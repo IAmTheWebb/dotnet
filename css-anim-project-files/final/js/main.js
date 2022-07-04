@@ -6,7 +6,7 @@ let welcome = document.getElementById("welcome");
 let timeslot = "";
 let bd = document.body;
 
-hourNow = 12;
+hourNow = 5;
 //change text
 if (hourNow >= 5 && hourNow < 12) welcome.innerHTML = "Good Morning, welcome to";
 if (hourNow >= 12 && hourNow < 18) welcome.innerHTML = "Good Afternoon, welcome to";
@@ -51,9 +51,10 @@ let pause = setTimeout(() => {
 }, 500);
 
 //position sun depending on screen width
-sun.style.bottom = (screen.width / 3) + "px";
+sun.style.bottom = (screen.width / 2.0) + "px";
 sun.style.width = screen.width /20 + "px";
 sun.style.height = screen.width /20 + "px";
+sun.style.transformOrigin = "0% " + screen.width / 3 + "px";
 
 svg.addEventListener("load", function () {
     let svgDoc = svg.contentDocument;
