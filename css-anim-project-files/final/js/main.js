@@ -52,6 +52,14 @@ let pause = setTimeout(() => {
 }, 500);
 
 svg.addEventListener("load", function() {
+    //position sun depending on screen width
+    sun.style.bottom = (screen.width / 2.0) + "px";
+    sun.style.width = screen.width / 20 + "px";
+    sun.style.height = screen.width / 20 + "px";
+    sun.style.transformOrigin = "0% " + screen.width / 3 + "px";
+});
+
+svg.addEventListener("load", function() {
     let svgDoc = svg.contentDocument;
     let mt = svgDoc.getElementById("mountTint");
     if (timeslot == "day" || timeslot == "night") mt.style.opacity = 0.1;

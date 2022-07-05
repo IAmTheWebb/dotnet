@@ -34,12 +34,13 @@ body {
 }
 
 #sun {
-    height: 100px;
-    width: 100px;
+    height: 50px;
+    width: 50px;
+    bottom: 80%;
     background-color: #f4f2d5;
     border-radius: 50%;
     position: absolute;
-    top: 20%;
+    
     left: 50%;
     transform-origin: 0% 400px;
     transition: transform 3s ease, background 3s ease;
