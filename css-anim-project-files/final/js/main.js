@@ -6,11 +6,12 @@ let welcome = document.getElementById("welcome");
 let timeslot = "";
 let bd = document.body;
 
-hourNow = 5;
+hourNow = 12;
 //change text
 if (hourNow >= 5 && hourNow < 12) welcome.innerHTML = "Good Morning, welcome to";
-if (hourNow >= 12 && hourNow < 18) welcome.innerHTML = "Good Afternoon, welcome to";
-if (hourNow >= 18 || hourNow < 5) welcome.innerHTML = "Good Evening, welcome to";
+if (hourNow >= 12 && hourNow < 17) welcome.innerHTML = "Good Afternoon, welcome to";
+if (hourNow >= 17 || hourNow < 21) welcome.innerHTML = "Good Evening, welcome to";
+if (hourNow >= 21 || hourNow < 5) welcome.innerHTML = "Good Night, welcome to";
 
 
 //change background
@@ -23,7 +24,7 @@ if (hourNow >= 9 && hourNow < 16) timeslot = "day";
 if (hourNow >= 16 && hourNow < 18) {
     timeslot = "sunset";
     bd.classList.remove("day-back");
-    bd.classList.add("rise-back");
+    bd.classList.add("set-back");
 }
 if (hourNow >= 18 || hourNow < 6) {
     timeslot = "night";
@@ -50,14 +51,17 @@ let pause = setTimeout(() => {
     }
 }, 500);
 
-//position sun depending on screen width
-sun.style.bottom = (screen.width / 2.0) + "px";
-sun.style.width = screen.width /20 + "px";
-sun.style.height = screen.width /20 + "px";
-sun.style.transformOrigin = "0% " + screen.width / 3 + "px";
 
-svg.addEventListener("load", function () {
+//position sun depending on screen width
+sun.style.bottom = (window.innerWidth / 2) + "px";
+sun.style.width = window.innerWidth / 20 + "px";
+sun.style.height = window.innerWidth / 20 + "px";
+sun.style.transformOrigin = "0% " + window.innerWidth / 3 + "px";
+//sun.style.backgroundColor = "#fff";
+
+
+svg.addEventListener("load", function() {
     let svgDoc = svg.contentDocument;
     let mt = svgDoc.getElementById("mountTint");
-    if (timeslot == "day" || timeslot == "night") mt.style.opacity = 0;
+    if (timeslot == "day" || timeslot == "night") mt.style.opacity = 0.1;
 }, false);
