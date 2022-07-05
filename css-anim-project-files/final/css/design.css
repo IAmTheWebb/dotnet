@@ -40,7 +40,6 @@ body {
     background-color: #f4f2d5;
     border-radius: 50%;
     position: absolute;
-    
     left: 50%;
     transform-origin: 0% 400px;
     transition: transform 3s ease, background 3s ease;
